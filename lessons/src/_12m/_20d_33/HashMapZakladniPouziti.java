@@ -1,6 +1,9 @@
 package _12m._20d_33;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 
 class Vaha {
     double vaha;
@@ -45,6 +48,28 @@ public class HashMapZakladniPouziti {
         hm.put("Karel", new Vaha(70));
         System.out.println("mapa: " + hm);
         //vrácení hodnoty podle klíče
+        Vaha v = hm.get("Venca");
+        System.out.println("Venca vazi: " + v);
+        //zjištění, zda klíč je v mapě:
+        if (hm.containsKey("Pavel")){
+            System.out.println("Pavel váží: " + hm.get("Pavel"));
+        }
+        //zjištění, zda hodnota je v mapě:
+        if(hm.containsValue(new Vaha(105))) {
+            System.out.println("Nekdo vazi 105 kg");
+        }
+
+        hm.get("Pavel").vaha+=10; //Pavel ztloustnul
+        //Výpis všech klíčů:
+        System.out.println("Lidi: " + hm.keySet());
+        //transformace na jiný typ kolekce:
+        //toto nelze
+        //ArrayList<Vaha> = (ArrayList<Vaha>) hm.values();
+        Collection<Vaha> col = hm.values();
+        //použijte cyklus pro iteraci všech prvků v kolekci col:
+        Iterator<Vaha> it = col.iterator();
+
+
 
 
 
