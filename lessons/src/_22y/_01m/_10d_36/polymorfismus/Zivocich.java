@@ -8,8 +8,11 @@ public abstract class Zivocich {
     }
 
     public void vypisInfo() {
-        System.out.print(typ + ", ");
+        //System.out.print(typ + ", ");
+        //členská proměnná typ ani není potřeba
+        System.out.print(this.getClass().getName().substring(this.getClass().getName().lastIndexOf(".")+1) + ", ");
         vypisDelku();
     }
+    //nemusí být abstraktní, ale v tomto případě je použití abstract vhodnější
     public abstract void vypisDelku();
 }
