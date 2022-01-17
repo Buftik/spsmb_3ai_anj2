@@ -1,6 +1,7 @@
 package _22y._01m._17d_38.vyjimky;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 // Všechny výjimky implementují rozhraní Throwable
@@ -18,10 +19,13 @@ import java.util.Scanner;
 // "je mi to putna"
 
 //Možnosti ošetření výjimky:
-// 1. předání výjimky výše do nadřazené úrovně.
+// 1. předání výjimky výše do nadřazené úrovně,
+// 2. zachycení výjimky a kompletní ošetření v metodě, kde se vyskytla,
+// 3. částečné ošetření v metodě, kde se vyskytla a navíc poslání informace
+//    o jejím výskytu do nadřazené úrovně.
 
 public class VyjimkyUvod {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Scanner sc = new Scanner(new File("cisla.txt"));
         System.out.println("Precte neco ze souboru");
         int i = sc.nextInt();
