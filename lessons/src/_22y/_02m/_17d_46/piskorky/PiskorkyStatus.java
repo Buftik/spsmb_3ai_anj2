@@ -30,14 +30,16 @@ public class PiskorkyStatus implements Serializable {
         //this.hraci.add("Pepa");
         this.inicializaceTlacitek();
     }
-    public void inicializaceTlacitek(){
+
+    public void inicializaceTlacitek() {
         for (int i = 0; i < this.rozmerHraciPlochy + 1; i++) {
             for (int j = 0; j < this.rozmerHraciPlochy + 1; j++) {
-                HashMap om =new HashMap();
+                HashMap om = new HashMap();
                 this.herniTlacitka[i][j] = om;
                 om.put("i", Integer.valueOf(i));
                 om.put("j", Integer.valueOf(j));
-                om.put("player", Integer.valueOf(-1));
+                om.put("player", Integer.valueOf(j == 2 ? 0 : -1));
+
             }
         }
     }
