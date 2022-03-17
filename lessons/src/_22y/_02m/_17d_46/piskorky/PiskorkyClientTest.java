@@ -16,10 +16,11 @@ public class PiskorkyClientTest {
             try (var socket = new Socket(hostname, port)) {
                 switch (state) {
                     case 0:
+                        int s=30;
                         try (var writer = socket.getOutputStream()) {
-                            writer.write(20);
+                            writer.write(s);
                             //writer.flush();
-                            state = 20;
+                            state = s;
                         }
                         break;
                     case 10:

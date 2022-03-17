@@ -17,8 +17,6 @@ public class PiskorkyServer {
         int request = 0;
         ServerSocket listener = null;
         while (true) {
-
-
             try  {
                 listener = new ServerSocket(port);
                 System.out.printf("The started on port %d%n", port);
