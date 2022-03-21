@@ -1,5 +1,6 @@
 package _22y._03m._21d_49.vlakna;
-// metoda yeld() zde slouží pro předání řízení dalšímu vláknu v pořadí
+// Zde se obě vlákna pravidelně střídají.
+// Metoda yeld() zde slouží pro předání řízení dalšímu vláknu v pořadí
 // (klidně i znovu tomu samému).
 public class Vlakno2 extends  Thread {
     @Override
