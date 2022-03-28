@@ -17,7 +17,7 @@ public class DSynchronizaceVlaken extends  Thread {
         vlCteni.start();
         Vlakno3 vlVypis = new Vlakno3();
         vlVypis.start();
-        // vlákno main čeká na ukončení vlákna vlVypis
+        // vlákno main trpělivě čeká na ukončení vlákna vlVypis
         vlVypis.join();
         long konec = System.currentTimeMillis();
         System.out.println("Konec: " + (konec - zac));
