@@ -79,5 +79,68 @@ package _22y._04m.lambda;
 // LongPredicate          boolean test(long   value)
 // BiPredicate<T, U>      boolean test(T t ,U u)
 
+// Důležitá funkční rozhraní:
+// Balíček java.awt.event:
+// ActionListener               void actionPerformed(ActionEvent e)
+
+// Balíček java.io:
+// Closeable                    void close()
+// FileFilter                   boolean accept(File pathname)
+// FilenameFilter               boolean accept(File dir, String name)
+// Flushable                    void flush()
+
+// Balíček java.lang
+// AutoCloseable                void close()
+// Comparable<T>                int compareTo(T o)
+// Iterable<T>                  Iterator<T> iterator()
+// Runnable                     void run()
+
+// Balíček java.util
+// Comparator<T>                boolean equals(T o)
+// Observer                     void update(Observable o, Object arg)
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Locale;
+import java.util.function.*;
+
+// Překladač definuje  lambda výraz jako instanci funkčního rozhraní,
+// jehož metoda má odpovídající parametry a vrací hodnotu odpovídajícího typu. Obecný zápis
+// -------------------------------------------
+// ( parametry ) -> { příkazy }
+// -------------------------------------------
+// Ve většině případů, kdy si umí překladač domyslet typ parametru se typy uvádět nemusí, pokud je
+// navíc parametr než jede, první závorky psát nemusíme:
+// parametr -> { příkazy }
+// Tvoří-li tělo pouze jeden příkaz, lze vynechat složené závorky:
+// ( parametry ) -> příkaz
+// Nejjednodušší podoba tedy je:
+// parametr -> výraz
 public class AUvod {
+    public static void main(String[] args) {
+        IntBinaryOperator ibo;
+        int result;
+        ibo = (a, b) -> a + b;
+        result = ibo.applyAsInt(5,6);
+        System.out.println(result);
+        ibo = (a, b) -> a - b;
+        result = ibo.applyAsInt(5,6);
+        System.out.println(result);
+        //iterace seznamu pomocí třídy Consumer
+        ArrayList<String> als = new ArrayList<>();
+        als.add("ahoj"); als.add("cau"); als.add("nazdar");
+        als.forEach(s -> System.out.println(s));
+        //Supplier pro získání actual času
+        Supplier<LocalDateTime> time = () -> LocalDateTime.now();
+        System.out.println(time.get());
+        //Funkce pro vrácení stringu s velkými písmeny
+        Function<String, String> capitalize = s -> s.toUpperCase();
+        System.out.println(capitalize.apply("tiger"));
+        //Použití unárního operátoru
+        UnaryOperator<Integer> xor = integer -> integer ^ 5;
+        System.out.println(xor.apply(1));
+        //Použití predikátoru
+        Predicate<Integer> pr = integer -> integer>5;
+        System.out.println(pr.test(6));
+    }
 }
