@@ -12,22 +12,25 @@ public class Test {
         Node currN7 = new Node(7);
         Node currN8 = new Node(8, true);
 
-        graph.getHead().next.add(currN);
+        graph.getHead().nextNodeList.add(currN);
 
-        currN.next.add(currN2);
-        currN.next.add(currN4);
+        currN.nextNodeList.add(currN2);
+        currN.nextNodeList.add(currN4);
 
-        currN4.next.add(currN2);
-        currN4.next.add(currN5);
-        currN4.next.add(currN6);
+        currN4.nextNodeList.add(currN2);
+        currN4.nextNodeList.add(currN5);
+        currN4.nextNodeList.add(currN6);
 
-        currN2.next.add(currN3);
+        currN2.nextNodeList.add(currN3);
 
-        currN6.next.add(currN3);
-        currN6.next.add(currN7);
+        currN6.nextNodeList.add(currN3);
+        currN6.nextNodeList.add(currN7);
 
-        currN3.next.add(currN8);
+        currN3.nextNodeList.add(currN8);
 
-        graph.printGraphDFS(graph.getHead());
+        //currN8.nextNodeList.add(currN3);
+
+        //graph.printGraphDFS(graph.getHead());
+        System.out.print(graph.getNodeListDFS());
     }
 }

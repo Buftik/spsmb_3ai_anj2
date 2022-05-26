@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Node implements Comparable {
     int data;
-    ArrayList<Node> next;
+    ArrayList<Node> nextNodeList;
     boolean isFinal;
 
     @Override
@@ -23,7 +23,7 @@ public class Node implements Comparable {
     Node(int d)
     {
         this.data = d;
-        this.next = new ArrayList<>();
+        this.nextNodeList = new ArrayList<>();
     }
     //vrací záporné číslo, pokud je argument větší,
     //kladné, pokud je menší
